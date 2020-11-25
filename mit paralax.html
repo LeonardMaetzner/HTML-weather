@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main-container {
+            background-color: #2A3740;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: "Verdana";
+            padding: 10px;
+
+
+            margin: 25%;
+            margin-top: 5%;
+
+            max-width: 50%;
+
+            /*background: url(background.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;*/
+
+            color: #2A3740;
+
+        }
+
+        .main-container:hover {
+            transform-style: preserve-3d;
+            transform: perspective(10000px);
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+            color: #D5E7F2;
+            margin: 10px;
+            background-color: #516373;
+            border-radius: 40px 40px 20px 20px;
+            padding: 10px;
+            min-height: 70px;
+            box-shadow: 0px 0px 20px #000000;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(0px);
+        }
+
+        .time {
+            background-color: #516373;
+            border-radius: 20px;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            box-shadow: 0px 0px 20px #000000;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(0px);
+        }
+
+        .time_inner {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 2px 2px 20px #2A3740;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .flex-container-main {
+            background-color: #516373;
+            border-radius: 20px;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            box-shadow: 0px 0px 20px #000000;
+        }
+
+        .left {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: 40%;
+            border-radius: 20px 10px 10px 20px;
+            box-shadow: 2px 2px 20px #2A3740;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .city {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .mid {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: 25%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px #2A3740;
+
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .mid>div {
+            margin: 10px;
+            transform: translateZ(30px);
+
+        }
+
+        .mid_temp {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .right {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: 40%;
+            border-radius: 10px 20px 20px 10px;
+            box-shadow: 2px 2px 20px #2A3740;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .right>div {
+            transform: translateZ(30px);
+        }
+
+        .split{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .split>div{
+            width: 50%;
+        }
+
+        .split_left {
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 5px;
+            background-color: #516373;
+            box-shadow: 0px 0px 20px #000000;
+            border-radius: 20px 20px 20px 20px;
+            
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(0px);
+        }
+
+        .split_left_inner {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px #2A3740;
+            border-radius: 20px 10px 10px 20px;
+
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .split_right {
+            padding: 10px;
+            margin-right: 10px;
+            margin-left: 5px;
+            background-color: #516373;
+            box-shadow: 0px 0px 20px #000000;
+            border-radius: 20px 20px 20px 20px;
+            
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(0px);
+        }
+
+        .split_right_inner {
+            background-color: #A3B4BF;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px #2A3740;
+            border-radius: 10px 20px 20px 10px;
+
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(30px);
+        }
+
+        .footer {
+            font-size: 10px;
+            color: #D5E7F2;
+            margin: 10px;
+            background-color: #516373;
+            border-radius: 20px 20px 40px 40px;
+            padding: 10px;
+            height: 70px;
+            box-shadow: 0px 0px 20px #000000;
+
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transform: translateZ(0px);
+        }
+
+        @media (max-width: 750px) {
+            .flex-container-main {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .left {
+                border-radius: 20px 20px 10px 10px;
+                width: auto;
+            }
+
+            .mid {
+                width: auto;
+            }
+
+            .right {
+                border-radius: 10px 10px 20px 20px;
+                width: auto;
+            }
+        }
+
+        #compass {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            transform: translateZ(30px);
+        }
+
+        #bezel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 3px solid #eee;
+            border-radius: 50%;
+        }
+
+        #axis {
+            position: absolute;
+            left: 44px;
+            top: 44px;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+            border: 3px solid #666;
+            border-radius: 50%;
+        }
+
+        #needle {
+            position: absolute;
+            left: 48px;
+            width: 2px;
+            height: 80px;
+            top: 8px;
+            transform: rotate(0deg);
+        }
+
+        #needle:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 0;
+            height: 0;
+            border: 2px solid transparent;
+            border-bottom: 40px solid #FF3600;
+        }
+
+        #needle:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: -1px;
+            width: 0;
+            height: 0;
+            border: 2px solid transparent;
+            border-top: 40px solid rgb(0, 0, 0);
+        }
+
+        #N {
+            position: absolute;
+            top: 5px;
+            left: 39px;
+            color: #FF3600;
+            background-color: #A3B4BF;
+        }
+
+        #E {
+            position: absolute;
+            right: 5px;
+            top: 39px;
+            background-color: #A3B4BF;
+        }
+
+        #S {
+            position: absolute;
+            bottom: 5px;
+            left: 39px;
+            background-color: #A3B4BF;
+        }
+
+        #W {
+            position: absolute;
+            left: 5px;
+            top: 39px;
+            background-color: #A3B4BF;
+        }
+
+        .dir {
+            font-family: arial, sans-serif;
+            color: rgb(0, 0, 0);
+            font-size: 10px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .quad {
+            display: block;
+            width: 1px;
+            background: #ddd;
+            height: 80px;
+            position: absolute;
+            top: 8px;
+            left: 48px;
+        }
+
+        #NWSE {
+            transform: rotate(45deg);
+        }
+
+        #NESW {
+            transform: rotate(-45deg);
+        }
+
+        #WE {
+            transform: rotate(90deg);
+        }
+
+    </style>
+
+</head>
+
+<body class="main-container">
+    <div class="title">
+        <div style="transform: translateZ(30px);">
+            Weather today
+        </div>
+    </div>
+    <div class="time">
+        <div class="time_inner">
+            <div style="transform: translateZ(20px);">
+                Date/Time: <span id="datetime"></span>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container-main">
+
+        <div class="left">
+            <input type="text" id="cityName" value="Hannover" style="transform: translateZ(30px);">
+            <button type="button" onclick="sendWeatherRequest()" style="transform: translateZ(30px);">Get
+                Weather</button>
+            <p id="city" class="city" style="transform: translateZ(30px);">
+            </p>
+        </div>
+
+        <div class="mid">
+            <div>
+                min Temp:
+                <span id="min_temp">0</span>°C
+            </div>
+            <div class="mid_temp">
+                curent Temp:
+                <span id="temp">0</span>°C
+            </div>
+            <div>
+                max Temp:
+                <span id="max_temp">0</span>°C
+            </div>
+
+            </p>
+        </div>
+
+        <div class="right">
+            <div id="w_main">
+
+            </div>
+            <div id="w_icon">
+                <img id=weather_icon>
+            </div>
+            <div id="w_desc">
+
+            </div>
+        </div>
+    </div>
+    <div class="split">
+        <div class="split_left">
+            <div class="split_left_inner">
+                <div class="wind_direct" style="transform: translateZ(30px);">
+                    Wind direction: <span id="wind_direction" style="font-weight: bold">0</span>°
+                </div>
+                <div id="compass" style="margin-top: 5px; margin-bottom: 5px;">
+                    <div id="bezel"></div>
+                    <div id="NWSE" class="quad"></div>
+                    <div id="NESW" class="quad"></div>
+                    <div id="NS" class="quad"></div>
+                    <div id="WE" class="quad"></div>
+                    <span id="N" class="dir">N</span>
+                    <span id="E" class="dir">E</span>
+                    <span id="S" class="dir">S</span>
+                    <span id="W" class="dir">W</span>
+                    <div id="needle"></div>
+                    <div id="axis"></div>
+                </div>
+                <div class="wind_speed" style="transform: translateZ(30px);">
+                    Wind speed: <span id="wind_speed" style="font-weight: bold">0</span> km/h
+                </div>
+            </div>
+        </div>
+        <div class="split_right">
+            <div class="split_right_inner" style="min-height: 148px;">
+                <div style="font-weight: bold;">
+                    Clothing suggestion:
+                </div>
+                <div id = "clothing" style="font-size: 30px; margin: 20px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p style="margin: 25px;">
+        <div style="transform: translateZ(30px);">
+            Leonard Mätzner
+        </div>
+        </p>
+    </div>
+    <p id="statusText"></p>
+
+</body>
+<script>var VanillaTilt=function(){"use strict";class t{constructor(e,i={}){if(!(e instanceof Node))throw"Can't initialize VanillaTilt because "+e+" is not a Node.";this.width=null,this.height=null,this.clientWidth=null,this.clientHeight=null,this.left=null,this.top=null,this.gammazero=null,this.betazero=null,this.lastgammazero=null,this.lastbetazero=null,this.transitionTimeout=null,this.updateCall=null,this.event=null,this.updateBind=this.update.bind(this),this.resetBind=this.reset.bind(this),this.element=e,this.settings=this.extendSettings(i),this.reverse=this.settings.reverse?-1:1,this.glare=t.isSettingTrue(this.settings.glare),this.glarePrerender=t.isSettingTrue(this.settings["glare-prerender"]),this.fullPageListening=t.isSettingTrue(this.settings["full-page-listening"]),this.gyroscope=t.isSettingTrue(this.settings.gyroscope),this.gyroscopeSamples=this.settings.gyroscopeSamples,this.elementListener=this.getElementListener(),this.glare&&this.prepareGlare(),this.fullPageListening&&this.updateClientSize(),this.addEventListeners(),this.updateInitialPosition()}static isSettingTrue(t){return""===t||!0===t||1===t}getElementListener(){if(this.fullPageListening)return window.document;if("string"==typeof this.settings["mouse-event-element"]){const t=document.querySelector(this.settings["mouse-event-element"]);if(t)return t}return this.settings["mouse-event-element"]instanceof Node?this.settings["mouse-event-element"]:this.element}addEventListeners(){this.onMouseEnterBind=this.onMouseEnter.bind(this),this.onMouseMoveBind=this.onMouseMove.bind(this),this.onMouseLeaveBind=this.onMouseLeave.bind(this),this.onWindowResizeBind=this.onWindowResize.bind(this),this.onDeviceOrientationBind=this.onDeviceOrientation.bind(this),this.elementListener.addEventListener("mouseenter",this.onMouseEnterBind),this.elementListener.addEventListener("mouseleave",this.onMouseLeaveBind),this.elementListener.addEventListener("mousemove",this.onMouseMoveBind),(this.glare||this.fullPageListening)&&window.addEventListener("resize",this.onWindowResizeBind),this.gyroscope&&window.addEventListener("deviceorientation",this.onDeviceOrientationBind)}removeEventListeners(){this.elementListener.removeEventListener("mouseenter",this.onMouseEnterBind),this.elementListener.removeEventListener("mouseleave",this.onMouseLeaveBind),this.elementListener.removeEventListener("mousemove",this.onMouseMoveBind),this.gyroscope&&window.removeEventListener("deviceorientation",this.onDeviceOrientationBind),(this.glare||this.fullPageListening)&&window.removeEventListener("resize",this.onWindowResizeBind)}destroy(){clearTimeout(this.transitionTimeout),null!==this.updateCall&&cancelAnimationFrame(this.updateCall),this.reset(),this.removeEventListeners(),this.element.vanillaTilt=null,delete this.element.vanillaTilt,this.element=null}onDeviceOrientation(t){if(null===t.gamma||null===t.beta)return;this.updateElementPosition(),this.gyroscopeSamples>0&&(this.lastgammazero=this.gammazero,this.lastbetazero=this.betazero,null===this.gammazero?(this.gammazero=t.gamma,this.betazero=t.beta):(this.gammazero=(t.gamma+this.lastgammazero)/2,this.betazero=(t.beta+this.lastbetazero)/2),this.gyroscopeSamples-=1);const e=this.settings.gyroscopeMaxAngleX-this.settings.gyroscopeMinAngleX,i=this.settings.gyroscopeMaxAngleY-this.settings.gyroscopeMinAngleY,s=e/this.width,n=i/this.height,l=(t.gamma-(this.settings.gyroscopeMinAngleX+this.gammazero))/s,a=(t.beta-(this.settings.gyroscopeMinAngleY+this.betazero))/n;null!==this.updateCall&&cancelAnimationFrame(this.updateCall),this.event={clientX:l+this.left,clientY:a+this.top},this.updateCall=requestAnimationFrame(this.updateBind)}onMouseEnter(){this.updateElementPosition(),this.element.style.willChange="transform",this.setTransition()}onMouseMove(t){null!==this.updateCall&&cancelAnimationFrame(this.updateCall),this.event=t,this.updateCall=requestAnimationFrame(this.updateBind)}onMouseLeave(){this.setTransition(),this.settings.reset&&requestAnimationFrame(this.resetBind)}reset(){this.event={clientX:this.left+this.width/2,clientY:this.top+this.height/2},this.element&&this.element.style&&(this.element.style.transform=`perspective(${this.settings.perspective}px) `+"rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"),this.resetGlare()}resetGlare(){this.glare&&(this.glareElement.style.transform="rotate(180deg) translate(-50%, -50%)",this.glareElement.style.opacity="0")}updateInitialPosition(){if(0===this.settings.startX&&0===this.settings.startY)return;this.onMouseEnter(),this.fullPageListening?this.event={clientX:(this.settings.startX+this.settings.max)/(2*this.settings.max)*this.clientWidth,clientY:(this.settings.startY+this.settings.max)/(2*this.settings.max)*this.clientHeight}:this.event={clientX:this.left+(this.settings.startX+this.settings.max)/(2*this.settings.max)*this.width,clientY:this.top+(this.settings.startY+this.settings.max)/(2*this.settings.max)*this.height};let t=this.settings.scale;this.settings.scale=1,this.update(),this.settings.scale=t,this.resetGlare()}getValues(){let t,e;return this.fullPageListening?(t=this.event.clientX/this.clientWidth,e=this.event.clientY/this.clientHeight):(t=(this.event.clientX-this.left)/this.width,e=(this.event.clientY-this.top)/this.height),t=Math.min(Math.max(t,0),1),e=Math.min(Math.max(e,0),1),{tiltX:(this.reverse*(this.settings.max-t*this.settings.max*2)).toFixed(2),tiltY:(this.reverse*(e*this.settings.max*2-this.settings.max)).toFixed(2),percentageX:100*t,percentageY:100*e,angle:Math.atan2(this.event.clientX-(this.left+this.width/2),-(this.event.clientY-(this.top+this.height/2)))*(180/Math.PI)}}updateElementPosition(){let t=this.element.getBoundingClientRect();this.width=this.element.offsetWidth,this.height=this.element.offsetHeight,this.left=t.left,this.top=t.top}update(){let t=this.getValues();this.element.style.transform="perspective("+this.settings.perspective+"px) rotateX("+("x"===this.settings.axis?0:t.tiltY)+"deg) rotateY("+("y"===this.settings.axis?0:t.tiltX)+"deg) scale3d("+this.settings.scale+", "+this.settings.scale+", "+this.settings.scale+")",this.glare&&(this.glareElement.style.transform=`rotate(${t.angle}deg) translate(-50%, -50%)`,this.glareElement.style.opacity=`${t.percentageY*this.settings["max-glare"]/100}`),this.element.dispatchEvent(new CustomEvent("tiltChange",{detail:t})),this.updateCall=null}prepareGlare(){if(!this.glarePrerender){const t=document.createElement("div");t.classList.add("js-tilt-glare");const e=document.createElement("div");e.classList.add("js-tilt-glare-inner"),t.appendChild(e),this.element.appendChild(t)}this.glareElementWrapper=this.element.querySelector(".js-tilt-glare"),this.glareElement=this.element.querySelector(".js-tilt-glare-inner"),this.glarePrerender||(Object.assign(this.glareElementWrapper.style,{position:"absolute",top:"0",left:"0",width:"100%",height:"100%",overflow:"hidden","pointer-events":"none"}),Object.assign(this.glareElement.style,{position:"absolute",top:"50%",left:"50%","pointer-events":"none","background-image":"linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",width:`${2*this.element.offsetWidth}px`,height:`${2*this.element.offsetWidth}px`,transform:"rotate(180deg) translate(-50%, -50%)","transform-origin":"0% 0%",opacity:"0"}))}updateGlareSize(){this.glare&&Object.assign(this.glareElement.style,{width:`${2*this.element.offsetWidth}`,height:`${2*this.element.offsetWidth}`})}updateClientSize(){this.clientWidth=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,this.clientHeight=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}onWindowResize(){this.updateGlareSize(),this.updateClientSize()}setTransition(){clearTimeout(this.transitionTimeout),this.element.style.transition=this.settings.speed+"ms "+this.settings.easing,this.glare&&(this.glareElement.style.transition=`opacity ${this.settings.speed}ms ${this.settings.easing}`),this.transitionTimeout=setTimeout(()=>{this.element.style.transition="",this.glare&&(this.glareElement.style.transition="")},this.settings.speed)}extendSettings(t){let e={reverse:!1,max:15,startX:0,startY:0,perspective:1e3,easing:"cubic-bezier(.03,.98,.52,.99)",scale:1,speed:300,transition:!0,axis:null,glare:!1,"max-glare":1,"glare-prerender":!1,"full-page-listening":!1,"mouse-event-element":null,reset:!0,gyroscope:!0,gyroscopeMinAngleX:-45,gyroscopeMaxAngleX:45,gyroscopeMinAngleY:-45,gyroscopeMaxAngleY:45,gyroscopeSamples:10},i={};for(var s in e)if(s in t)i[s]=t[s];else if(this.element.hasAttribute("data-tilt-"+s)){let t=this.element.getAttribute("data-tilt-"+s);try{i[s]=JSON.parse(t)}catch(e){i[s]=t}}else i[s]=e[s];return i}static init(e,i){e instanceof Node&&(e=[e]),e instanceof NodeList&&(e=[].slice.call(e)),e instanceof Array&&e.forEach(e=>{"vanillaTilt"in e||(e.vanillaTilt=new t(e,i))})}}return"undefined"!=typeof document&&(window.VanillaTilt=t,t.init(document.querySelectorAll("[data-tilt]"))),t}();</script>
+<script>
+
+    VanillaTilt.init(document.querySelectorAll(".main-container"), {
+        max: 8,
+        speed: 4000
+    });
+
+    var weatherCity = "Hannover";
+
+    /*var input_field = document.createElement("cityName");
+    input_field.setAttribute("type", "text");
+    input_field.setAttribute("value", "Enter your City here");
+    document.body.appendChild(input_field);*/
+
+    function sendWeatherRequest() {
+        // registration:
+        // http://home.openweathermap.org/users/sign_in
+
+
+        weatherCity = document.getElementById("cityName").value; // to get the information from the text input field
+        document.getElementById("city").innerHTML = weatherCity; // to display the choosen city
+
+        apiKey = "3cc3950519348eace664054f33bd5892"; // your API key
+
+        request = new XMLHttpRequest();
+        request.onreadystatechange = weatherHandler;
+
+        request.open("GET", "https://" +
+            "api.openweathermap.org/data/2.5/weather?q=" +
+            weatherCity + ",de&appid=" + apiKey, true);
+        request.send();
+    }
+
+    function kelToCel(tempK) {
+        return (tempK - 273).toFixed(1);
+    }
+
+    function weatherHandler() {
+        if (this.readyState == this.DONE) {
+
+            if (this.status == 200) { // HTTP OK                   
+                var json = JSON.parse(this.responseText);
+                var city = json["name"];
+                document.getElementById("city").innerHTML = city;
+
+                var tempC = kelToCel(json["main"]["temp"]);
+                var tempC_min = kelToCel(json["main"]["temp_min"]);
+                var tempC_max = kelToCel(json["main"]["temp_max"]);
+
+                document.getElementById("temp").innerHTML = tempC;
+                document.getElementById("min_temp").innerHTML = tempC_min;
+                document.getElementById("max_temp").innerHTML = tempC_max;
+
+                var weather_id = json.weather[0].id;
+                var weather_main = json.weather[0].main;
+                var weather_desc = json.weather[0].description;
+                var weather_icon = json.weather[0].icon;
+
+                document.getElementById("w_main").innerHTML = weather_main;
+                document.getElementById("w_desc").innerHTML = weather_desc;
+                document.getElementById('weather_icon').src = "http://openweathermap.org/img/wn/" + weather_icon + "@2x.png";
+
+                var wind_dir = json.wind.deg;
+                var wind_speed = json.wind.speed;
+
+                document.getElementById("wind_direction").innerHTML = wind_dir;
+                document.getElementById("wind_speed").innerHTML = wind_speed;
+                document.getElementById("needle").style.transform = 'rotate(' + wind_dir + 'deg)'
+                //document.getElementById("needle").style.transform = "animation: spin 2s ease forwards;"
+
+                //clothing suggestions:
+                //temperature
+                var clothing_elem = document.getElementById("clothing");
+                clothing_elem.innerHTML = "";
+
+                switch (true){
+                    case tempC > 30:
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128083"; //sunglasses
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128085"; //tshirt
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128099"; //barefoot
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129651"; //shorts
+                        break;
+                    case tempC > 20:
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128085"; //thirt
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128095"; //sneaker
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128086"; //jeans
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129651"; //shorts
+                        break;
+                    case tempC > 10:
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129509"; //jacket
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129506"; //cap
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128086"; //jeans
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128095"; //sneaker
+                        break;
+                    case true:
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129508"; //gloves
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129509"; //jacket
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#129507"; //scraf
+                        clothing_elem.innerHTML = clothing_elem.innerHTML + "&#128094"; //boots
+                        break;
+                }
+                
+
+                //rain
+            }
+        }
+    }
+
+    var dt = new Date();
+    var time = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    document.getElementById("datetime").innerHTML = time;
+
+    window.setInterval(function setTime() {
+        var dt = new Date();
+        var time = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+        document.getElementById("datetime").innerHTML = time;
+    }, 10000) //every 10 seconds
+
+    setTime();
+</script>
+
+</html>
